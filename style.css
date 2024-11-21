@@ -1,0 +1,310 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+header {
+    background-color:transparent;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navigation li a {
+    border: 15px;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+.navigation li a:hover,
+.navigation li a.active {
+    background:#457b9d;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    /* top: 10%; */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    top: 100px;
+
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+h2{
+    color:white;
+}
+h3{
+    color:white;
+}
+
+/* About Section */
+#about {
+    padding: 4rem 2rem;
+    background-color: #354f52;
+    color: #fff;
+    line-height: 1.8;
+    text-align: left;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#about img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 2rem auto;
+    display: block;
+}
+
+/* Projects Section */
+#projects {
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #354f52;
+}
+
+.project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.project-card {
+    text-align: center;
+    background:#415a77;
+    border-radius: 13px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    margin: 0 1rem 1rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Contact Section */
+
+ #contact {
+    background-color:#354f52;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+/*
+
+
+
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact input,
+#contact textarea {
+
+    width: 60%;
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f4f4f4;
+}
+
+#contact button {
+    padding: 0.75rem 2rem;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: #0056b3;
+}  */
+
+#contact p{
+    color: white;
+    font-size: 18px;
+}
+
+
+#contact input,
+#contact textarea {
+    width: 30%;
+    padding: 0.75rem;
+    background-color: transparent; /* Transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Subtle semi-transparent border */
+    border-radius: 8px;
+    color: white; /* White text for contrast */
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Subtle placeholder color */
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color:#284b63; /* Highlight border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Glow effect on focus */
+}
+
+/* Styling the button */
+#contact button {
+    padding: 0.75rem 2rem;
+    border: none;
+    background:#22577a;
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#contact button:hover {
+    background: linear-gradient(90deg, #0056b3, #004080); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Styling for the form container to enhance the look */
+#contact form {
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+   /* Semi-transparent form background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for form container */
+}
+
+
+
+/* Footer */
+footer {
+    background: #2f3e46;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #0056b3;
+}
+/* Add this to style.css */
+.dynamic-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color:white; /* Adjust as needed */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide extra text */
+    display: inline-block;
+}
+
+.cursor {
+    font-weight: bold;
+    color: #333;
+    animation: blink 0.7s steps(2, start) infinite;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    50% { opacity: 0; }
+}

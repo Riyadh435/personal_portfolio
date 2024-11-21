@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#" class="logo">My Portfolio</a>
+        <nav>
+          <ul class="navigation">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to My Portfolio</h1>
+        <p><span class="dynamic-text"></span><span class="cursor">|</span></p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
+        aliquid fugiat veritatis delectus aut tenetur voluptas ullam nam
+        repellendus soluta. Unde, voluptatum corporis. Adipisci omnis sapiente
+        ipsam recusandae eius provident suscipit, cum labore libero minima. Eius
+        ex nam ducimus in blanditiis qui non doloremque, cumque dolorum
+        voluptates sed. Dicta officiis laboriosam dolores ab facere mollitia
+        similique laborum, possimus fugiat harum esse asperiores soluta saepe
+        exercitationem quo deserunt. Similique necessitatibus minus placeat aut
+        veniam maiores totam voluptatem, repellendus cupiditate inventore vero
+        natus? Cupiditate, eligendi. Error enim modi illum explicabo dolore!
+        Explicabo ab nam veritatis dolores inventore ducimus incidunt modi
+        reprehenderit impedit earum optio vitae, quae ipsa aperiam corporis
+        atque nemo. Inventore cum, perspiciatis non unde blanditiis, dolores,
+        repellendus ut officia voluptatem consequatur hic quas libero sunt quod
+        accusantium impedit nostrum autem dolorum aut eos molestias optio
+        accusamus culpa esse. Architecto aperiam quia, quae sint ut ab
+        voluptatem tempora excepturi vero ipsum, nobis atque, at fugiat
+        quibusdam aspernatur suscipit corrupti tenetur magni optio saepe eum
+        necessitatibus nesciunt? Hic quia, ad provident unde consequuntur cum
+        amet eos. Commodi, consequuntur ut. Placeat sunt accusamus ipsam alias
+        praesentium ab dicta nulla aliquid quo numquam cupiditate aliquam rem
+        quod accusantium quam eligendi dolores, nobis quia maiores!
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <br />
+      <br />
+      <div class="project-gallery">
+        <div class="project-card">
+          <img src="project1.jpg" alt="Project 1" />
+          <h3>Project 1</h3>
+          <p>Brief description of the project.</p>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Brief description of the project.</p>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Brief description of the project.</p>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Brief description of the project.</p>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Brief description of the project.</p>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Brief description of the project.</p>
+        </div>
+        <!-- Add more projects as needed -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <br />
+      <br />
+      <h2>Contact Me</h2>
+      <br />
+      <h3>If you'd like to collaborate, feel free to reach out!</h3>
+      <br />
+      <p>Name: Riyadh Touhid</p>
+      <p>Email: riadhpes@gmail.com</p>
+      <p>Thank you</p>
+      <br />
+      <br />
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const dynamicText = document.querySelector(".dynamic-text");
+  const phrases = [
+    "I am a designer.",
+    "I am a font creator.",
+    "I am a game developer.",
+    "I am a web developer.",
+    "I am a problem solver.",
+  ];
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentPhrase = phrases[phraseIndex];
+    if (!isDeleting) {
+      // Add one character
+      dynamicText.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+
+      // If the word is complete, pause before deleting
+      if (charIndex === currentPhrase.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1500); // Pause before deletion
+        return;
+      }
+    } else {
+      // Remove one character
+      dynamicText.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+
+      // If the word is deleted, move to the next phrase
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length; // Loop back to start
+      }
+    }
+
+    // Adjust typing speed
+    const speed = isDeleting ? 50 : 100;
+    setTimeout(typeEffect, speed);
+  }
+
+  // Start the typing effect
+  typeEffect();
+</script>
